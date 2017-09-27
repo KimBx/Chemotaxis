@@ -1,33 +1,37 @@
 Bacteria taxi;
+int x = 150;
+int y = 150;
 void setup()   
 {     
   //initialize bacteria variables here   
   size(300, 300);
-  background(0);
 }   
 void draw()   
 {    
+
   taxi = new Bacteria();
   taxi.show();
   taxi.move();
+  background(0, 0, 255);
+  fill(255, 12, 123);
+  ellipse(x, y, 20, 20);
 }  
 class Bacteria    
 {     
   int myX, myY, myColor;   
   Bacteria()
   {
-    myX = 150;
-    myY = 150;
-  }
 
-  void move()
-  {
-    myX = myX + (int)(Math.random()*3)-1;
-    myY = myY + (int)(Math.random()*3)-1;
+    myX = x;
+    myY = y;
   }
-
   void show()
   {
-    ellipse(myX, myY, 50, 50);
+  }
+  void move()
+  {
+
+    x = x + (int)(Math.random()*3)-1;
+    y = y + (int)(Math.random()*3)-1;
   }
 }  
