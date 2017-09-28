@@ -1,17 +1,23 @@
-Bacteria taxi;
+Bacteria [] taxi;
 int x = 150;
 int y = 150;
 void setup()   
 {     
   //initialize bacteria variables here   
   size(300, 300);
+  taxi = new Bacteria[5];
+  for (int i = 0; i < taxi.length; i++)
+  {
+    taxi[i] = new Bacteria();
+  }
 }   
 void draw()   
 {    
-
-  taxi = new Bacteria();
-  taxi.show();
-  taxi.move();
+  for (int i = 0; i < taxi.length; i++)
+  {
+    taxi[i].show();
+    taxi[i].move();
+  }
   background(0, 0, 255);
   fill(255, 12, 123);
   ellipse(x, y, 20, 20);
